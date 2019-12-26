@@ -11,17 +11,18 @@ globalThis.clearInterval = tjs.clearInterval;
 globalThis.XMLHttpRequest = tjs.XMLHttpRequest;
 globalThis.alert = tjs.alert;
 globalThis.prompt = tjs.prompt;
+globalThis.hrtime = tjs.hrtime;
 
 Object.defineProperty(globalThis, 'global', {
     enumerable: true,
-    configurable: false,
-    writable: false,
+    configurable: true,
+    writable: true,
     value: globalThis
 });
 
 Object.defineProperty(globalThis, 'window', {
     enumerable: true,
-    configurable: false,
-    writable: false,
+    configurable: true,
+    writable: true,
     value: globalThis
 });

@@ -7,16 +7,26 @@ import { Console } from '@tjs/console';
 import { Worker as _Worker } from '@tjs/core';
 import { defineEventAttribute, EventTarget, Event, CustomEvent } from '@tjs/event-target';
 import { Performance } from '@tjs/performance';
-
+import * as process from '@tjs/process';
 
 // Console
 //
 
 Object.defineProperty(window, 'console', {
     enumerable: true,
-    configurable: false,
-    writable: false,
+    configurable: true,
+    writable: true,
     value: new Console()
+});
+
+// Process
+//
+
+Object.defineProperty(window, 'process', {
+    enumerable: true,
+    configurable: true,
+    writable: true,
+    value: process
 });
 
 
@@ -70,32 +80,32 @@ class MessageEvent extends Event {
 Object.defineProperties(window, {
     EventTarget: {
         enumerable: true,
-        configurable: false,
-        writable: false,
+        configurable: true,
+        writable: true,
         value: EventTarget
     },
     Event: {
         enumerable: true,
-        configurable: false,
-        writable: false,
+        configurable: true,
+        writable: true,
         value: Event
     },
     ErrorEvent: {
         enumerable: true,
-        configurable: false,
-        writable: false,
+        configurable: true,
+        writable: true,
         value: ErrorEvent
     },
     MessageEvent: {
         enumerable: true,
-        configurable: false,
-        writable: false,
+        configurable: true,
+        writable: true,
         value: MessageEvent
     },
     CustomEvent: {
         enumerable: true,
-        configurable: false,
-        writable: false,
+        configurable: true,
+        writable: true,
         value: CustomEvent
     }
 });
@@ -111,8 +121,8 @@ defineEventAttribute(Object.getPrototypeOf(window), 'load');
 
 Object.defineProperty(window, 'performance', {
     enumerable: true,
-    configurable: false,
-    writable: false,
+    configurable: true,
+    writable: true,
     value: new Performance()
 });
 
@@ -122,15 +132,15 @@ Object.defineProperty(window, 'performance', {
 
 Object.defineProperty(window, 'AbortController', {
     enumerable: true,
-    configurable: false,
-    writable: false,
+    configurable: true,
+    writable: true,
     value: AbortController
 });
 
 Object.defineProperty(window, 'AbortSignal', {
     enumerable: true,
-    configurable: false,
-    writable: false,
+    configurable: true,
+    writable: true,
     value: AbortSignal
 });
 
@@ -173,7 +183,7 @@ defineEventAttribute(Object.getPrototypeOf(Worker), 'error');
 
 Object.defineProperty(window, 'Worker', {
     enumerable: true,
-    configurable: false,
-    writable: false,
+    configurable: true,
+    writable: true,
     value: Worker
 });

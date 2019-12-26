@@ -44,3 +44,12 @@ target_include_directories(qjs PRIVATE src)
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     target_link_libraries(qjs atomic)
 endif()
+
+add_executable(qjsc
+    src/qjsc.c
+)
+target_link_libraries(qjsc qjs m)
+
+add_executable(jscompress
+    src/jscompress.c
+)

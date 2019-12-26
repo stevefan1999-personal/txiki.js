@@ -1,8 +1,3 @@
-add_executable(qjsc
-    src/qjsc.c
-)
-target_link_libraries(qjsc qjs m)
-
 set(JS_PATH ${CMAKE_SOURCE_DIR}/src/js)
 set(js_files
     ${JS_PATH}/abort-controller.js
@@ -21,6 +16,7 @@ set(js_files
     ${JS_PATH}/url.js
     ${JS_PATH}/uuid.js
     ${JS_PATH}/worker-bootstrap.js
+	${JS_PATH}/process.js
 )
 
 set(CUSTOM_QJSC "${CMAKE_CURRENT_BINARY_DIR}/qjsc" CACHE STRING "Custom path to QJSC")

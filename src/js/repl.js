@@ -26,12 +26,14 @@
 import * as hashlib from "@tjs/hashlib";
 import * as path from "@tjs/path";
 import * as uuid from "@tjs/uuid";
+import * as process from "@tjs/process";
 
 (function(g) {
     /* expose builtins */
     g.hashlib = hashlib;
     g.path = path;
     g.uuid = uuid;
+	g.process = process;
 
     /* close global objects */
     var Object = g.Object;
